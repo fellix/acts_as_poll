@@ -1,0 +1,13 @@
+class <%= @model_name.camelize %>Migration < ActiveRecord::Migration
+	def self.up
+		create_table :<%= @model_name.pluralize %> do |t|
+			t.text :description
+			t.boolean :showResult, :default => true
+			t.string :type, :limit => 1, :default => "C"
+		end
+	end
+	
+	def self.down
+		drop_table :<%= @model_name.pluralize %>
+	end
+end

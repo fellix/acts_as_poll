@@ -1,0 +1,5 @@
+class <%= @model_name.camelize %> < ActiveRecord::Base
+	has_many :<%= @model_name %>_options
+	validates_inclusion_of :type, :in => %w{"R", "C"}
+	validates_presence_of :description
+end

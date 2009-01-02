@@ -1,0 +1,15 @@
+class <%= @model_name.camelize %>OptionMigration < ActiveRecord::Migration
+
+	def self.up
+		create_table :<%= @model_name %>_options do |t|
+			t.references :<%= @model_name %>
+			t.string :content
+			t.integer :num_resp
+		end
+	end
+	
+	def self.down
+		drop_table :<%= @model_name %>_options
+	end
+
+end
