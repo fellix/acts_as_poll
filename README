@@ -1,13 +1,20 @@
 ActsAsPoll
 ==========
 
-Introduction goes here.
+This plugin is a poll system for RoR sites based.
 
 
 Example
 =======
 
-Example goes here.
+script/generate poll poll
+
+use the poller method for creates a poll in your ERb template
+for example use
+
+poller(@poll)
+
+@poll must be a valid Poll object.
 
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Copyright (c) 2009 Rafael Felix da Silva, released under the MIT license

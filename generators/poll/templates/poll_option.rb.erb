@@ -1,4 +1,5 @@
-class <%= @model_name.camelize %>Option < ActiveRecord::Base
-	belong_to :<%= @model_name %>
+class <%= camel_name %>Option < ActiveRecord::Base
+	belongs_to :<%= base_name %>
 	validates_presence_of :content
+	
 end

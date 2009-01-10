@@ -1,0 +1,21 @@
+<div id="poll_area">
+
+	<%% form_remote_tag :update=> "poll_content", :url => { :controller => :<%= base_name %>, :action => "vote" } do |f| %> 
+	<div id="poll_content">
+		<p><%%= poll.description %></p>
+			<input type="hidden" name="poll_id" value="<%%= <%= base_name %>.id %>" />
+	<table>
+		<%% for option in poll.<%= base_name %>_options %>
+			<tr>
+				<td>
+				<%%= radio_button("answer", "", option.content) %>
+				<%%= option.content %>
+				</td>
+			</tr>
+		<%% end %>
+	</table>
+		<%%= submit_tag "Vote" %>
+	</div>
+	<%% end %>
+</div>
+

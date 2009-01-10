@@ -1,0 +1,11 @@
+class <%= camel_name %>Controller < ApplicationController
+	def vote
+		poll_id = params[:poll_id]
+		answer = params[:answer]
+		@<%= base_name %> = <%= camel_name %>.find poll_id
+		<%= base_name %>_option = <%= camel_name %>Option.find(:first, :conditions => { :<%= base_name %>_id => @<%= base_name %>, :content => answer })
+		<%= base_name %>_option.num_resp += 1
+		<%= base_name %>_option.save 
+		render :partial => 'shared/result'
+	end
+end 
