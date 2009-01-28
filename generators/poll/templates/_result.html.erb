@@ -6,7 +6,9 @@
 		<%% for option in @<%= base_name %>.<%= base_name %>_options %>
 			<tr>
 				<td>
-				<%%= option.content %> - <%%= option.num_resp %>
+				<p class="progressbar">
+					<span><em style="left: <%%= option.percent_vote * 2 %>px"><%%= option.percent_vote %>%</em></span>
+				</p>
 				</td>
 			</tr>
 		<%% end %>

@@ -2,6 +2,15 @@ class <%= camel_name %> < ActiveRecord::Base
 	has_many :<%= base_name %>_options
 	validates_inclusion_of :mtype, :in => %w{"R", "C"}
 	validates_presence_of :description
+	
+	def total_votes
+		total = 0
+		for option in self.poll_options
+			total += option.num_resp
+		end
+		total
+	end
+	
 end
 
 

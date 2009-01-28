@@ -2,4 +2,9 @@ class <%= camel_name %>Option < ActiveRecord::Base
 	belongs_to :<%= base_name %>
 	validates_presence_of :content
 	
+	def percent_vote
+		percent = (self.num_resp*100)/self.poll.total_votes
+		percent
+	end
+	
 end
