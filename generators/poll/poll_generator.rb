@@ -26,6 +26,8 @@ class PollGenerator < Rails::Generator::NamedBase
 			#creates the controller
 			m.template "poll_controller.rb.erb", File.join("app/controllers", "#{@base_name}_controller.rb")
 			m.template "poll_helper.rb", File.join("app/helpers", "#{@base_name}_helper.rb")
+			#add the progressbar.css to the public
+			m.template "css/progressbar.css", File.join("public/stylesheets", "progressbar.css")
 		end
 	end
 	

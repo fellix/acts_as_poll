@@ -1,0 +1,56 @@
+dl, dt, dd{margin:0;padding:0;}
+
+dd{
+	width:216px;
+	height:41px;
+	background:url(../images/bg_bar.gif) no-repeat 0 0;
+	position:relative;
+}
+dd span{
+	position:absolute;
+	display:block;
+	width:200px;
+	height:25px;
+	background:url(../images/bar.gif) no-repeat 0 0;
+	top:8px;
+	left:8px;
+	overflow:hidden;
+	text-indent:-8000px;
+}
+dd em{
+	position:absolute;
+	display:block;
+	width:200px;
+	height:25px;
+	background:url(../images/bg_cover.gif) repeat-x;
+	top:0;
+}
+
+
+/* SINGLE PROGRESS BAR */
+
+.progressBar{
+	width:216px;
+	height:41px;
+	background:url(../images/bg_bar.gif) no-repeat 0 0;
+	position:relative;
+}
+.progressBar span{
+	position:absolute;
+	display:block;
+	width:200px;
+	height:25px;
+	background:url(../images/bar.gif) no-repeat 0 0;
+	top:8px;
+	left:8px;
+	overflow:hidden;
+	text-indent:-8000px;
+}
+.progressBar em{
+	position:absolute;
+	display:block;
+	width:200px;
+	height:25px;
+	background:url(../images/bg_cover.gif) repeat-x 0 0;
+	top:0;
+}
