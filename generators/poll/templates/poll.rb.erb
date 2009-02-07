@@ -11,6 +11,14 @@ class <%= camel_name %> < ActiveRecord::Base
 		total
 	end
 	
+	def radio?
+		self.mtype == "R"
+	end
+	
+	def check?
+		self.mtype == "C"
+	end
+	
 end
 
 

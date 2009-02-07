@@ -3,9 +3,23 @@ class <%= camel_name %>Controller < ApplicationController
 		poll_id = params[:poll_id]
 		answer = params[:answer]
 		@<%= base_name %> = <%= camel_name %>.find poll_id
-		<%= base_name %>_option = <%= camel_name %>Option.find(:first, :conditions => { :<%= base_name %>_id => @<%= base_name %>, :content => answer })
-		<%= base_name %>_option.num_resp += 1
-		<%= base_name %>_option.save 
+		if @<%= base_name %>.radio? 
+			<%= base_name %>_option = <%= camel_name %>Option.find(:first, :conditions => { :<%= base_name %>_id => @<%= base_name %>, :content => answer })
+			save_option <%= base_name %>_option
+		else
+			for obj in answer
+				#if the option is checked
+				if obj[1].to_i == 1
+					<%= base_name %>_option = <%= camel_name %>Option.find(:first, :conditions => { :poll_id => @poll, :content => obj[0] })
+					save_option <%= base_name %>_option
+			end
+		end
 		render :partial => 'shared/result'
+	end
+	
+	protected
+	def save_option(option)
+		option.num_resp += 1
+		option.save
 	end
 end 

@@ -8,7 +8,11 @@
 		<%% for option in poll.<%= base_name %>_options %>
 			<tr>
 				<td>
-				<%%= radio_button("answer", "", option.content) %>
+				<%% if poll.radio? %>
+					<%%= radio_button("answer", "", option.content) %>
+				<%% else %>
+					<%= check_box("answer", option.content, :checked => "") %>
+				<%% end %>
 				<%%= option.content %>
 				</td>
 			</tr>
