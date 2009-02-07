@@ -1,9 +1,9 @@
-ActsAsPoll
+= ActsAsPoll
 ==========
 
 This plugin is a poll system for Ruby on Rails sites based.
 
-Example
+== Example
 =======
 
 script/generate poll poll
@@ -15,5 +15,21 @@ poller(@poll)
 
 @poll must be a valid Poll object.
 
+== Models
+The Acts As Poll plugin is divided into two models Poll and PollOption
+You can customize this names using the
+
+script/generate poll model_name
+
+using this ModelName and ModelNameOption is your own models.
+For use you need do create a Poll object
+you can see the mtype column this column is for multi valored polls case mtype is C (CheckBox), if is only one answer for the Poll you can use R (RadioButton) for mtype column (default), you need to create the PollOption object for the Poll, each PollOption object is for each option to the user vote. 
+
+== Warning
+If you like to use the progressbar you need to add to you application.html.rb or in the view what you use de poller method, the progressbar stylesheet, this stylesheet is added to your public/stylesheet directory, use like it:
+
+<%= stylesheet_link_tag "progressbar" %>
+		
+		
 
 Copyright (c) 2009 Rafael Felix da Silva, released under the MIT license
